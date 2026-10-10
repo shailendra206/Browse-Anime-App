@@ -1,0 +1,43 @@
+/* Hero-section's custom pointer */
+.hero-pagination.swiper-pagination-horizontal.swiper-pagination-bullets {
+  width: fit-content !important;
+  left: 52px !important;          /* aligns with hero content padding (px-13) */
+  right: auto !important;
+  bottom: 30px !important;
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+@media (max-width: 1279px) {
+  .hero-pagination.swiper-pagination-horizontal.swiper-pagination-bullets { left: 56px !important; }
+}
+@media (max-width: 1024px) {
+  .hero-pagination.swiper-pagination-horizontal.swiper-pagination-bullets { left: 40px !important; }
+}
+@media (max-width: 760px) {
+  .hero-pagination.swiper-pagination-horizontal.swiper-pagination-bullets {
+    left: 20px !important;
+    bottom: 18px !important;
+  }
+}
+@media (max-width: 460px) {
+  .hero-pagination.swiper-pagination-horizontal.swiper-pagination-bullets { left: 16px !important; }
+}
+
+.hero-pagination .swiper-pagination-bullet {
+  width: 24px;
+  height: 5px;
+  border-radius: 0;
+  background: #a0a0b8;
+  opacity: 1;
+  margin: 0 !important;
+  transition: width 0.2s, background 0.2s;
+}
+.hero-pagination .swiper-pagination-bullet-active {
+  width: 42px;
+  background: #b5873a;
+}
+
+/* dark theme (class-based, matches Tailwind's `dark` class on <html>) */
+.dark .hero-pagination .swiper-pagination-bullet { background: #4a4d5e; }
+.dark .hero-pagination .swiper-pagination-bullet-active { background: #c8a96e; }

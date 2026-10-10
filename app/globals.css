@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+}
+
+img { display: block; max-width: 100%; }
+a { text-decoration: none; }
+
+/* hide scrollbars globally, matching source app's global.css */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
+
+/* lucide-react SVG icons — sizing passed via size= prop, these handle alignment only */
+.nav-icon    { flex-shrink: 0; }
+.button-icon { vertical-align: -0.15em; flex-shrink: 0; }
+.save-icon   { flex-shrink: 0; }
+.text-icon   { vertical-align: -0.15em; margin-left: 2px; }
+.rating-icon { vertical-align: -0.15em; flex-shrink: 0; }
+.filter-select { line-height: 1; }
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+/* customizable <select> (Chromium): picker matches trigger width + theme. Unsupported browsers keep the native select. */
+@supports (appearance: base-select) {
+  .filter-select,
+  .filter-select::picker(select) {
+    appearance: base-select;
+  }
+  .filter-select {
+    display: flex;
+    align-items: center;
+  }
+  .filter-select::picker-icon { display: none; }
+  .filter-select::picker(select) {
+    width: anchor-size(width);
+    min-width: anchor-size(width);
+    margin: 0;
+    padding: 0;
+    border: 1px solid rgb(0 0 0 / 0.3);
+    background: #ede9e2;
+    color-scheme: light;
+    scrollbar-width: none;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.35);
+  }
+  .dark .filter-select::picker(select) {
+    background: #1e1f28;
+    border-color: rgb(255 255 255 / 0.25);
+    color-scheme: dark;
+  }
+  .filter-select option {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    padding: 0 0.5rem;
+    font-size: 0.82rem;
+    font-weight: 400;
+    color: #000;
+    background: transparent;
+  }
+  .dark .filter-select option { color: #fff; }
+  .filter-select option::checkmark { display: none; }
+  .filter-select option:checked { background: rgb(181 135 58 / 0.15); color: #b5873a; }
+  .dark .filter-select option:checked { background: rgb(200 169 110 / 0.2); color: #c8a96e; }
+  .filter-select option:hover:not(:checked) { background: #1a66cc; color: #fff; }
+  .filter-select option:checked:hover { background: rgb(181 135 58 / 0.25); }
+  .dark .filter-select option:checked:hover { background: rgb(200 169 110 / 0.3); }
+}
