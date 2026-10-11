@@ -5,10 +5,15 @@ export default function Footer() {
     <footer className="bg-[#f5f3ef] dark:bg-[#0e0f14] border-t border-black/8 dark:border-white/7 px-13 max-[1279px]:px-10 max-[1024px]:px-7 max-[760px]:px-4.5 max-[460px]:px-4 py-6 max-[760px]:py-5">
       <div className="flex items-center justify-between gap-6 max-[500px]:gap-3">
         {/* Left: logo + tagline */}
-        <div className="flex items-baseline gap-3">
-          <a href="/" className="flex items-baseline gap-2 shrink-0 no-underline">
-            <span className="font-serif text-lg text-[#5c5c72] dark:text-[#7a7d8c] tracking-wide">見たい</span>
-            <span className="font-serif text-2xl font-semibold text-[#b5873a] dark:text-[#c8a96e] tracking-wide">Mitai</span>
+        <div className="flex items-center gap-3">
+          <a href="/" aria-label="Mitai home" className="flex items-center gap-2.5 shrink-0 no-underline text-[#b5873a] dark:text-[#c8a96e]">
+            <svg viewBox="48 128 416 260" className="h-6 w-auto" fill="currentColor" aria-hidden="true">
+              <path d="M75 167 Q256 221 437 167 L453 135 Q256 189 59 135 Z" />
+              <rect x="119" y="237" width="274" height="24" />
+              <rect x="151" y="172" width="35" height="210" />
+              <rect x="326" y="172" width="35" height="210" />
+            </svg>
+            <span className="font-serif text-2xl font-semibold tracking-wide">Mitai</span>
           </a>
           <p className="max-[760px]:hidden text-sm font-light text-[#a0a0b8] dark:text-[#4a4d5e] tracking-wide">
             — Discover what to watch next.

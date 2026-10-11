@@ -34,9 +34,14 @@ export default function Header() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-100 h-16 flex items-center gap-8 max-[1279px]:gap-6 max-[1024px]:gap-3 px-13 max-[1279px]:px-10 max-[1024px]:px-7 max-[760px]:px-4.5 max-[460px]:px-3.5 border-b border-black/8 dark:border-white/7 bg-[#f5f3ef]/85 dark:bg-[#0e0f14]/85 backdrop-blur-xl">
       {/* Logo */}
-      <a href="/" className="flex items-baseline gap-2 shrink-0 no-underline max-[760px]:mr-auto">
-        <span className="font-serif text-lg max-[460px]:text-base text-[#5c5c72] dark:text-[#7a7d8c] tracking-wide">見たい</span>
-        <span className="font-serif text-2xl max-[460px]:text-xl font-semibold text-[#b5873a] dark:text-[#c8a96e] tracking-wide">Mitai</span>
+      <a href="/" aria-label="Mitai home" className="flex items-center gap-2.5 shrink-0 no-underline max-[760px]:mr-auto text-[#b5873a] dark:text-[#c8a96e]">
+        <svg viewBox="48 128 416 260" className="h-6 max-[460px]:h-5 w-auto" fill="currentColor" aria-hidden="true">
+          <path d="M75 167 Q256 221 437 167 L453 135 Q256 189 59 135 Z" />
+          <rect x="119" y="237" width="274" height="24" />
+          <rect x="151" y="172" width="35" height="210" />
+          <rect x="326" y="172" width="35" height="210" />
+        </svg>
+        <span className="font-serif text-2xl max-[460px]:text-xl font-semibold tracking-wide">Mitai</span>
       </a>
 
       {/* Search (static) */}
