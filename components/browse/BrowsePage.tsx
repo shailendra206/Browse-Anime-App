@@ -17,7 +17,7 @@ export default function BrowsePage({ initialSearch }: BrowsePageProps) {
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState(false)
   function getYearArr() {
-    let yearArr = [2026]
+    let yearArr = [new Date().getFullYear()]
     for (let i = 2025; i >= 1990; i--) {
       yearArr = [...yearArr, i]
     }
